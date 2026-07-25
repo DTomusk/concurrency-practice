@@ -27,6 +27,7 @@ while (true)
             break;
         case 2:
             Console.WriteLine("You selected 2");
+            await RunParallelWithdrawals.RunWithdrawals(10, 10, 100);
             break;
         case 3:
             Console.WriteLine("You selected 3");
