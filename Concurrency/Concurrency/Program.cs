@@ -1,5 +1,13 @@
-﻿while (true)
+﻿using Concurrency;
+
+Console.WriteLine("Welcome to the concurrency playground");
+
+while (true)
 {
+    Console.WriteLine("Please select an option:");
+    Console.WriteLine("1. Increment a counter in parallel");
+    Console.WriteLine("2. Option 2");
+    Console.WriteLine("3. Option 3");
     Console.Write("Enter a number (1, 2, or 3): ");
     string? input = Console.ReadLine();
 
@@ -13,6 +21,9 @@
     {
         case 1:
             Console.WriteLine("You selected 1");
+            await ParallelIncrement.RunIncrements(1000000, 4);
+            await ParallelIncrement.RunIncrementsWithLock(1000000, 4);
+            Console.WriteLine();
             break;
         case 2:
             Console.WriteLine("You selected 2");
